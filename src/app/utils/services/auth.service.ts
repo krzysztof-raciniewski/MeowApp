@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
+import { Session } from '../models/session';
 import { User } from '../models/user';
 import { AuthStorageService } from './auth-storage.service';
 
@@ -29,5 +30,9 @@ export class AuthService {
 
   isLoggedIn(): boolean {
     return Boolean(this._authStorageService.getSession());
+  }
+
+  getSession(): Session {
+    return this._authStorageService.getSession() ?? { login: '', date: '' };
   }
 }
