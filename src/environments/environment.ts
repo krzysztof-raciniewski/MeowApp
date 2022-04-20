@@ -1,7 +1,6 @@
-import { User } from '../app/utils/models/user';
+import { baseEnvironment } from './base';
 
 export const environment = {
+  ...baseEnvironment,
   production: false,
-  apiUrl: 'https://meowfacts.herokuapp.com/',
-  user: { email: 'meow@cat.com', password: 'meowmeow' } as User,
 };
