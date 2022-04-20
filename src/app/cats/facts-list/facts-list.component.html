@@ -2,7 +2,7 @@
 
 <main class="container">
   <app-fact-entry
-    *ngFor="let text of facts$ | async; let i = index"
+    *ngFor="let text of facts$ | async; trackBy: trackByFactText; let i = index"
     [text]="text"
     [index]="i"
   ></app-fact-entry>

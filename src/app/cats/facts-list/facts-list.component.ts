@@ -43,6 +43,10 @@ export class FactsListComponent implements OnInit, OnDestroy {
     }
   }
 
+  trackByFactText(index: number, item: string) {
+    return item;
+  }
+
   private getFactsBatch(): void {
     this.setLoadingState(true);
     this._meowFactsService.getFacts().subscribe((facts) => {
