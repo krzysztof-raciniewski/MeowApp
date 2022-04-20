@@ -6,7 +6,6 @@ import { FactsListComponent } from './facts-list/facts-list.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'facts' },
-
   {
     path: 'facts',
     component: FactsListComponent,
