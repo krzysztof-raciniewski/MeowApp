@@ -1,5 +1,5 @@
-body {
-  font-family: "Lato", sans-serif;
+:host {
+  display: block;
 }
 
 .main-head {
@@ -11,11 +11,11 @@ body {
   height: 100%;
   background-color: #000;
   overflow-x: hidden;
-  padding-top: 20px;
+  padding-top: 1.8rem;
 }
 
 .main {
-  padding: 0px 10px;
+  padding: 0px 1rem;
 }
 
 @media screen and (max-height: 450px) {
