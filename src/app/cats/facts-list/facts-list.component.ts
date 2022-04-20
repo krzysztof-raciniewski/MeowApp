@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
-import { BehaviorSubject, fromEvent, Observable, Subscription } from 'rxjs';
+import { BehaviorSubject, debounceTime, fromEvent, Observable, Subscription } from 'rxjs';
 
 import { MeowFactsService } from '../../../app/data-access/meowfacts/meow-facts.service';
 
@@ -25,9 +25,11 @@ export class FactsListComponent implements OnInit, OnDestroy {
     this.facts$ = this.factsSubject.asObservable();
     this.getFactsBatch();
     this._subscription.add(
-      fromEvent(window, 'scroll').subscribe(() => {
-        this.onWindowScroll();
-      })
+      fromEvent(window, 'scroll')
+        .pipe(debounceTime(100))
+        .subscribe(() => {
+          this.onWindowScroll();
+        })
     );
   }
 
