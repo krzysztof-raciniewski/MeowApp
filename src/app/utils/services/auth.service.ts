@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
 
+import { environment } from '../../../environments/environment';
 import { Session } from '../models/session';
 import { User } from '../models/user';
 import { AuthStorageService } from './auth-storage.service';

@@ -7,5 +7,6 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FactEntryComponent {
-  @Input() text?: string;
+  @Input() text: string = '';
+  @Input() index: number = 0;
 }

@@ -5,6 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { DataAccessModule } from '../data-access/data-access.module';
 import { FactEntryComponent } from './facts-list/fact-entry/fact-entry.component';
 import { FactsListComponent } from './facts-list/facts-list.component';
+import { HeaderComponent } from './header/header.component';
+import { SpinnerComponent } from './facts-list/spinner/spinner.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'facts' },
@@ -15,7 +17,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [FactsListComponent, FactEntryComponent],
+  declarations: [FactsListComponent, FactEntryComponent, HeaderComponent, SpinnerComponent],
   imports: [CommonModule, RouterModule.forChild(routes), DataAccessModule],
 })
 export class CatsModule {}

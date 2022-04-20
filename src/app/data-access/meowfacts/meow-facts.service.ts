@@ -15,17 +15,11 @@ export class MeowFactsService {
       .pipe(map((value) => value.data[0]));
 
     const requests: Observable<string>[] = [];
-    console.log(Array.from(Array(count).keys()));
+
     for (let i = 0; i < count; i++) {
       requests.push(request$);
     }
 
-    return zip(requests).pipe(map(this.distinct));
-  }
-
-  private distinct(array: string[]): string[] {
-    return array.filter(
-      (thing, i, arr) => arr.findIndex((t) => t === thing) === i
-    );
+    return zip(requests);
   }
 }
