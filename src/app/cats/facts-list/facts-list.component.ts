@@ -57,9 +57,9 @@ export class FactsListComponent implements OnInit, OnDestroy {
     this._changeDetectorRef.markForCheck();
   }
 
-  private distinct(array: string[]): string[] {
-    return array.filter(
-      (thing, i, arr) => arr.findIndex((t) => t === thing) === i
+  private distinct(data: string[]): string[] {
+    return data.filter(
+      (value, index, array) => array.findIndex((t) => t === value) === index
     );
   }
 }
